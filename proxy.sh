@@ -1,3 +1,4 @@
+#!/bin/bash
 MY_PROXY_URL='http://s1firewall:8080/'
 HTTP_PROXY=$MY_PROXY_URL
 HTTPS_PROXY=$MY_PROXY_URL
