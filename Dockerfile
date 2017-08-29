@@ -45,7 +45,7 @@ RUN printenv
 USER seluser
 
 COPY generate_config /opt/bin/generate_config
-RUN chmod +x /opt/bin/generate_config
+RUN sudo chmod +x /opt/bin/generate_config
 
 # Running this command as sudo just to avoid the message:
 # To run a command as administrator (user "root"), use "sudo <command>". See "man sudo_root" for details.
