@@ -42,6 +42,20 @@ RUN chmod +x /etc/profile.d/proxy.sh
 RUN /bin/bash -c "source /etc/profile.d/proxy.sh"
 RUN printenv
 
+#============
+# Set ENV
+#============
+ENV HTTP_PROXY 'http://s1firewall:8080/'
+ENV HTTPS_PROXY 'http://s1firewall:8080/'
+ENV FTP_PROXY 'http://s1firewall:8080/'
+ENV http_proxy 'http://s1firewall:8080/'
+ENV https_proxy 'http://s1firewall:8080/'
+ENV ftp_proxy 'http://s1firewall:8080/'
+ENV no_proxy 'localhost,127.0.0.1'
+ENV NO_PROXY 'localhost,127.0.0.1'
+RUN printenv
+
+
 USER seluser
 
 COPY generate_config /opt/bin/generate_config
