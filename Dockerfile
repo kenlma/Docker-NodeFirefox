@@ -39,7 +39,7 @@ RUN wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geck
 #============
 COPY proxy.sh /etc/profile.d/
 RUN chmod +x /etc/profile.d/proxy.sh
-RUN source /etc/profile.d/Proxy.sh
+RUN source /etc/profile.d/proxy.sh
 RUN printenv
 
 USER seluser
