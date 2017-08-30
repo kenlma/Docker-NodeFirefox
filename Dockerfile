@@ -34,13 +34,6 @@ RUN wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geck
   && chmod 755 /opt/geckodriver-$GECKODRIVER_VERSION \
   && ln -fs /opt/geckodriver-$GECKODRIVER_VERSION /usr/bin/geckodriver
 
-#============
-# Set proxy
-#============
-COPY proxy.sh /etc/profile.d/
-RUN chmod +x /etc/profile.d/proxy.sh
-RUN /bin/bash -c "source /etc/profile.d/proxy.sh"
-RUN printenv
 
 #============
 # Set ENV
@@ -53,8 +46,8 @@ ENV https_proxy 'http://s1firewall:8080/'
 ENV ftp_proxy 'http://s1firewall:8080/'
 ENV no_proxy 'localhost,127.0.0.1'
 ENV NO_PROXY 'localhost,127.0.0.1'
+ENV node_proxy 'http://s1firewall:8080/'
 RUN printenv
-
 
 USER seluser
 
